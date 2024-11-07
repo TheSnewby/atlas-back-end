@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import urllib
 import requests
 import sys
@@ -20,7 +21,7 @@ for todo in todos:
     # print("TODO: {}".format(todo))
     if todo['userId'] == employee_id:
         # print("TODO: {}".format(todo))
-        if todo['completed'] == True:
+        if todo['completed']:
             todo_list.append(todo["title"])
             todo_success_count += 1
         todo_count += 1
