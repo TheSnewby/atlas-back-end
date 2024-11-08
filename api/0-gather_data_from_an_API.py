@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Gather data from an API"""
-import urllib
 import requests
 import sys
+import urllib
+
 
 if len(sys.argv) > 1:
     employee_id = int(sys.argv[1])
