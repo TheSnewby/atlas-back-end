@@ -32,4 +32,4 @@ if len(sys.argv) > 1:
                                                           todo_success_count,
                                                           todo_count))
     for todo in todo_list:
-        print("\t{}".format(todo))
+        print("\t {}".format(todo))
