@@ -18,8 +18,8 @@ if len(sys.argv) > 1:  # ensure script has an input
             break
     todos = requests.get(url_todos).json()  # get list of dicts of todos
 
-    header = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-    data = [header]  # list of rows for csv
+    # header = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+    data = []  # list of rows for csv
 
     for todo in todos:
         if todo['userId'] == employee_id:  # add rows to csv
@@ -27,6 +27,6 @@ if len(sys.argv) > 1:  # ensure script has an input
                        str(todo['completed']), todo['title']]
             data.append(new_row)
 
-    with open('{}.csv'.format(employee_id), 'w') as f:  # csv writer
+    with open('{}.csv'.format(employee_id), 'w', newline='') as f:  # csv writer
         writer = csv.writer(f, quotechar='"', quoting=csv.QUOTE_ALL)
         writer.writerows(data)
