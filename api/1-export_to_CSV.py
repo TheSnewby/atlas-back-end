@@ -22,12 +22,12 @@ if len(sys.argv) > 1:  # ensure script has an input
     data = [header]  # list of rows for csv
 
     for todo in todos:
-        if todo['userId'] == employee_id:
-            data.append([str(employee_id),  # add rows to csv
-                         employee_name,
-                         todo['completed'],
-                         todo['title']])
+        if todo['userId'] == employee_id:  # add rows to csv
+            new_row = [str(employee_id), employee_name,
+                       str(todo['completed']), todo['title']]
+            data.append(new_row)
+            # print("DEBUG: {}".format(new_row))
 
     with open('USER_ID.csv', 'w') as f:  # create file and write csv
-        writer = csv.writer(f)
+        writer = csv.writer(f, quotechar='"', quoting=csv.QUOTE_ALL)
         writer.writerows(data)
