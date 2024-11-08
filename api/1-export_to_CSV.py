@@ -14,7 +14,7 @@ if len(sys.argv) > 1:  # ensure script has an input
     users = requests.get(url_users).json()  # get list of dicts of users
     for user in users:
         if user['id'] == employee_id:
-            employee_name = user["name"]  # establish name
+            username = user["username"]  # establish name
             break
     todos = requests.get(url_todos).json()  # get list of dicts of todos
 
@@ -23,7 +23,7 @@ if len(sys.argv) > 1:  # ensure script has an input
 
     for todo in todos:
         if todo['userId'] == employee_id:  # add rows to csv
-            new_row = [str(employee_id), employee_name,
+            new_row = [str(employee_id), username,
                        str(todo['completed']), todo['title']]
             data.append(new_row)
 
