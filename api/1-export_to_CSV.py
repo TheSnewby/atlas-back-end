@@ -28,6 +28,6 @@ if len(sys.argv) > 1:  # ensure script has an input
                          todo['completed'],
                          todo['title']])
 
-    with open('USER_ID.csv', 'wb') as f:  # create file and write csv
+    with open('USER_ID.csv', 'w') as f:  # create file and write csv
         writer = csv.writer(f)
         writer.writerows(data)
