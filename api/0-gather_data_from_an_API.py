@@ -28,6 +28,7 @@ if len(sys.argv) > 1:
                 todo_success_count += 1
             todo_count += 1
     print("Employee {} is done with tasks({}/{}):".format(employee_name,
-        todo_success_count, todo_count))
+                                                          todo_success_count,
+                                                          todo_count))
     for todo in todo_list:
         print("\t{}".format(todo))
