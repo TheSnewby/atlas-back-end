@@ -20,7 +20,6 @@ data_json = {}
 task_list = {}
 
 for todo in todos:  # cycles through all todos and commits user_data
-    print('TODO: {}'.format(todo))
     if (current_id + 1) != todo["userId"]:
         data_json[str(current_id + 1)] = user_data  # commit userdata
         current_id = todo["userId"] - 1  # set new current id
