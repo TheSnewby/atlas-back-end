@@ -27,6 +27,6 @@ if len(sys.argv) > 1:  # ensure script has an input
                        str(todo['completed']), todo['title']]
             data.append(new_row)
 
-    with open('{}.csv'.format(employee_id), 'w', newline='') as f:  # csv writer
+    with open('{}.csv'.format(employee_id), 'w', newline='') as f:
         writer = csv.writer(f, quotechar='"', quoting=csv.QUOTE_ALL)
         writer.writerows(data)
