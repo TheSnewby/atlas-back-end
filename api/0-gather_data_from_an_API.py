@@ -15,15 +15,12 @@ if len(sys.argv) > 1:
         if user['id'] == employee_id:
             employee_name = user["name"]
             break
-    # print("Employee Name: {}".format(employee_name))
     todos = requests.get(url_todos).json()
     todo_count = 0
     todo_success_count = 0
     todo_list = []
     for todo in todos:
-        # print("TODO: {}".format(todo))
         if todo['userId'] == employee_id:
-            # print("TODO: {}".format(todo))
             if todo['completed']:
                 todo_list.append(todo["title"])
                 todo_success_count += 1
